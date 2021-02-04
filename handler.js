@@ -53,8 +53,8 @@ module.exports.deleteEmployee = (event, context, callback) => {
         if (error) {
             callback(error, null)
         } else {
-            if (results) {
-                callback(null, results)
+            if (results.affectedRows > 0) {
+                callback(null, "Record Deleted")
             } else {
                 callback(null, "No Employee Exist with Employee Id " + emp_id)
             }
