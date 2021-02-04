@@ -1,0 +1,57 @@
+
+
+service: myservice
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: ap-southeast-1
+  stage: 'dev'
+
+functions:
+  getEmployees:
+    handler: handler.getEmployees
+    events: 
+     - http: 
+          path: employees
+          method: get
+          integration: lambda
+
+           
+  getEmployee:
+    handler: handler.getEmployee
+    events: 
+     - http: 
+          path: employees/get
+          method: get
+          integration: lambda
+
+
+  deleteEmployee:
+    handler: handler.deleteEmployee
+    events: 
+     - http: 
+          path: employees/delete
+          method: get
+          integration: lambda
+
+
+  create:
+    handler: handler.createEmployee
+    events:
+      - http:
+          path: employees/create
+          method: post
+          parameters: 
+          integration: lambda
+
+  update:
+    handler: handler.updateEmployee
+    events:
+      - http:
+          path: employees/update
+          method: put
+          integration: lambda
+
+

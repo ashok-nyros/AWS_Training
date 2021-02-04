@@ -1,0 +1,7 @@
+{
+    "host": "database-2.cvmfllpurn7p.ap-southeast-1.rds.amazonaws.com",
+    "user": "dbadmin",
+    "password": "AshokNyros",
+    "port": 3306,
+    "database": "CRUD"
+}
